@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>三链科技 | 种植数据录入</title>
+    <title>三链科技 | 生产数据录入</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -292,7 +292,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2><i class="fa fa-bars"></i>药材种植数据录入</h2>
+                                <h2><i class="fa fa-bars"></i>药材生产数据录入</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -319,7 +319,98 @@
                                 </div>
                             </div>
                             <div class="x_content">
+                                <div class="row">
+                                    <div class="btn-group  btn-group-sm">
+                                        <button id="dataEntry_examine" class="btn btn-default" type="button" onclick="{location.href='dataEntry_examine.html'}">抽样检验</button>
+                                        <button id="dataEntry_purchase" class="btn btn-default" type="button" onclick="{location.href='dataEntry_purchase.html'}">采购管理</button>
+                                        <button id="dataEntry_produce" class="btn btn-default" type="button" onclick="{location.href='dataEntry_produce.html'}">加工生产</button>
+                                        <button id="dataEntry_sale" class="btn btn-default" type="button" onclick="{location.href='dataEntry_sale.html'}">销售管理</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_content">
 
+                                <div class="form-horizontal form-label-left form-group">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验编号
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="examineID" readonly="readonly" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验时间
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="examineTime" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验结果
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select id="examineResult" class="form-control col-md-7 col-xs-12">
+                                                <option>合格</option>
+                                                <option>不合格</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">二氧化硫残留量
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="SO2Remain" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采收批次
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select id="harvestOrder" class="form-control col-md-7 col-xs-12">
+                                                <option>CS2018030500001</option>
+                                                <option>CS2018030500002</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验单位
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="examineCompany" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">总灰度
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="grayNumber" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验负责人
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="examineMan" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">检验报告上传
+                                        </label>
+                                        <div class="form-group">
+                                            <input id="file_examine" type="file" name="file"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button id="upload_examine" class="btn btn-info" type="button" onclick="fileUpload()">upload</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button id="summit_examine" type="submit" class="btn btn-success">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                             </div>
@@ -341,28 +432,6 @@
     </div>
 </div>
 
-
-<!-- upload -->
-<script type="text/javascript">
-
-    function fileUpload() {
-
-
-        var formData = new FormData();
-        formData.append('file', $('#file')[0].files[0]);
-        $.ajax({
-            url: '/task/fileUpload',
-            type: 'POST',
-            cache: false,
-            data: formData,
-            processData: false,
-            contentType: false
-        }).done(function (res) {
-        }).fail(function (res) {
-        });
-    }
-
-</script>
 <!-- jQuery -->
 <script src="../vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
