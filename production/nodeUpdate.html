@@ -266,18 +266,10 @@
                             <div class="x_content">
                                 <br />
                                 <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
-                                    <!--<div class="form-group">-->
-                                        <!--<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">企业类型<span class="required">*</span>-->
-                                        <!--</label>-->
-                                        <!--<div class="col-md-6 col-sm-6 col-xs-12">-->
-                                            <!--<input type="companyType" id="first-name" required="required" class="form-control col-md-7 col-xs-12">-->
-                                        <!--</div>-->
-                                    <!--</div>-->
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">企业类型<span class="required">*</span></label>
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <select id="companyType" class="form-control col-md-7 col-xs-12">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">企业类型</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select id="companyType" class="form-control col-md-6 col-sm-6 col-xs-12">
                                                 <option>批发市场</option>
                                                 <option>种植基地</option>
                                                 <option>生产企业</option>
@@ -286,8 +278,6 @@
                                             </select>
                                         </div>
                                     </div>
-
-
                                     <div class="form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="companyName">企业名称<span class="required">*</span>
                                         </label>
@@ -328,15 +318,14 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">上传附件 <span class="required">*</span>
-                                        </label>
-                                        <input id="file" type="file" name="file"/>
-                                        <button id="upload" class="btn btn-info" type="button" onclick="fileUpload()">upload</button>
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">上传附件</label>
+                                        <input id="file" class="col-md-7 col-xs-12" type="file" name="file"/>
                                     </div>
 
-                                    <div class="ln_solid"></div>
+
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button id="upload" class="btn btn-info" type="button" onclick="fileUpload()">上传附件</button>
                                             <button type="submit" class="btn btn-success">提交</button>
                                             <button class="btn btn-primary" type="reset">重置</button>
                                         </div>
