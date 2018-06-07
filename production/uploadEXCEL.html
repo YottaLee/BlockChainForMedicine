@@ -56,12 +56,12 @@
                             <!--<li><a><i class="fa fa-registered"></i> 注册 <span class="fa fa-chevron-down"></span></a></li>-->
                             <li><a><i class="fa fa-home"></i> 首页 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="startpage.html" > 功能界面展示</a></li>
+                                    <li><a href="startpage.html"> 功能界面展示</a></li>
                                     <li><a href="nodeUpdate.html">节点完善信息</a></li>
                                     <!--<li><a><i href="" class="fa fa-chain"></i> 自动加载链上数据 <span class="fa fa-chevron-down"></span></a></li>-->
-                                    <li><a href="TraceWarning.html" >溯源预警</a></li>
-                                    <li><a >节点管理</a></li>
-                                    <li><a >区块链浏览器</a></li>
+                                    <li><a href="TraceWarning.html">溯源预警</a></li>
+                                    <li><a>节点管理</a></li>
+                                    <li><a>区块链浏览器</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-table"></i> EXCEL上传数据 <span class="fa fa-chevron-down"></span></a>
@@ -249,7 +249,8 @@
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="#">Settings 1</a>
                                             </li>
@@ -264,7 +265,8 @@
                             </div>
                             <div class="x_content">
                                 <div class="form-group">
-                                    <label id="businessprocess" class="control-label col-md-3 col-sm-3 col-xs-12">业务环节<span class="required">*</span></label>
+                                    <label id="businessprocess"
+                                           class="control-label col-md-3 col-sm-3 col-xs-12">业务环节<span class="required">*</span></label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                         <select id="companyType" class="form-control col-md-7 col-xs-12">
                                             <option>药材种植</option>
@@ -275,16 +277,17 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">上传附件 <span class="required">*</span>
-                                    </label>
-                                    <div class="form-group">
-                                        <input id="file" type="file" name="file"/>
-                                    </div>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">上传附件</label>
+                                    <input id="file" class="control-label col-md-9 col-sm-9 col-xs-12" type="file" name="file"/>
                                 </div>
+
                                 <div class="form-group">
-                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                        <button id="upload" class="btn btn-info" type="button" onclick="fileUpload()">upload</button>
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <button id="upload" class="btn btn-info" type="button" onclick="fileUpload()">
+                                            上传附件
+                                        </button>
                                     </div>
                                 </div>
                             </div>
