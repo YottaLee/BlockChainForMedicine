@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>三链科技 | 节点管理 </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,32 +54,19 @@
                     <div class="menu_section">
                         <ul class="nav side-menu">
                             <!--<li><a><i class="fa fa-registered"></i> 注册 <span class="fa fa-chevron-down"></span></a></li>-->
-                            <li><a><i class="fa fa-home"></i> 首页 <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="startpage.html" > 功能界面展示</a></li>
-                                    <li><a href="nodeUpdate.html">节点完善信息</a></li>
-                                    <!--<li><a><i href="" class="fa fa-chain"></i> 自动加载链上数据 <span class="fa fa-chevron-down"></span></a></li>-->
-                                    <li><a href="TraceWarning.html" >溯源预警</a></li>
-                                    <li><a >节点管理</a></li>
-                                    <li><a href="blockBrowser.html">区块链浏览器</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-table"></i> EXCEL上传数据 <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="startpage.html"><i class="fa fa-home"></i> 首页 </a></li>
+                            <li><a href="blockBrowser.html"><i class="fa fa-book"></i> 区块链浏览器 </a></li>
+                            <li><a><i class="fa fa-table"></i> 数据上传 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="download.html">下载附件</a></li>
                                     <li><a href="uploadEXCEL.html">上传EXCEL</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-copy"></i> 药材种植数据录入总界面 <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-copy"></i> 数据录入 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="dataEntry_harvest.html">采收管理</a></li>
                                     <li><a href="dataEntry_process.html">初加工管理</a></li>
                                     <li><a href="dataEntry_storage.html">仓储管理</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-product-hunt"></i> 药材生产数据录入总界面 <span
-                                    class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
                                     <li><a href="dataEntry_examine.html">抽样检验</a></li>
                                     <li><a href="dataEntry_purchase.html">采购管理</a></li>
                                     <li><a href="dataEntry_produce.html">加工生产</a></li>
@@ -88,11 +75,16 @@
                             </li>
                             <li><a><i class="fa fa-search"></i> 溯源查询 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="AccordingFindingConditionDisplay.html">根据查询条件展示</a></li>
+                                    <li><a href="AccordingFindingConditionDisplay.html">数据查询</a></li>
                                     <li><a href="StatisticsAnalysis.html">统计分析</a></li>
                                 </ul>
                             </li>
-
+                            <li><a><i class="fa fa-clock-o"></i> 溯源预警 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="TraceWarning.html" >指标预警</a></li>
+                                    <li><a href="monitorWarning.html">监管预警</a></li>
+                                </ul>
+                            </li>
 
                         </ul>
                     </div>
@@ -116,6 +108,103 @@
                     </a>
                 </div>
                 <!-- /menu footer buttons -->
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <img src="images/img.jpg" alt="">John Doe
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;">账号详情</a></li>
+                                <li>
+                                    <a href="nodeUpdate.html">
+                                        <span>认证详情</span>
+                                    </a>
+                                </li>
+                                <li><a href="nodeManagement.html">功能设置</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i>退出登陆</a></li>
+                            </ul>
+                        </li>
+
+                        <li role="presentation" class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-green">6</span>
+                            </a>
+                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="text-center">
+                                        <a>
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <!-- /top navigation -->
