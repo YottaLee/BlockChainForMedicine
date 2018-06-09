@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>三链科技 | 节点完善信息</title>
+    <title>三链科技 | 区块链浏览器</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,8 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+
+    <link href="css/block.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -56,12 +58,12 @@
                             <!--<li><a><i class="fa fa-registered"></i> 注册 <span class="fa fa-chevron-down"></span></a></li>-->
                             <li><a><i class="fa fa-home"></i> 首页 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="startpage.html" > 功能界面展示</a></li>
+                                    <li><a href="startpage.html"> 功能界面展示</a></li>
                                     <li><a href="nodeUpdate.html">节点完善信息</a></li>
                                     <!--<li><a><i href="" class="fa fa-chain"></i> 自动加载链上数据 <span class="fa fa-chevron-down"></span></a></li>-->
-                                    <li><a href="TraceWarning.html" >溯源预警</a></li>
-                                    <li><a >节点管理</a></li>
-                                    <li><a >区块链浏览器</a></li>
+                                    <li><a href="TraceWarning.html">溯源预警</a></li>
+                                    <li><a>节点管理</a></li>
+                                    <li><a href="blockBrowser.html">区块链浏览器</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-table"></i> EXCEL上传数据 <span class="fa fa-chevron-down"></span></a>
@@ -244,12 +246,13 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>区块链浏览器</h2>
+                                <h2>联盟链状态</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="#">Settings 1</a>
                                             </li>
@@ -264,389 +267,180 @@
                             </div>
 
                             <div class="x_content">
+
                                 <!-- Smart Wizard -->
-                                <div id="wizard" class="form_wizard wizard_horizontal">
-                                    <ul class="wizard_steps">
-                                        <li>
-                                            <a href="#block1">
-                                                <span id="nodeHeight0" class="step_no">创世区块</span>
-                                                <!--<div class="step_descr">-->
-                                                    <!--<span id="nodeName0" class="step_descr">节点名称</span>-->
-                                                    <!--<span id="time0" class="step_descr">12s前</span>-->
-                                                    <!--<span id="size0" class="step_descr">1.01M</span>-->
-                                                <!--</div>-->
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block2">
-                                                <span class="step_no">2</span>
-                                                <span class="step_descr">
-                                              Step 2<br />
-                                              <small>Step 2 description</small>
-                                          </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block3">
-                                                <span class="step_no">3</span>
-                                                <span class="step_descr">
-                                              Step 3<br />
-                                              <small>Step 3 description</small>
-                                          </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block4">
-                                                <span class="step_no">4</span>
-                                                <span class="step_descr"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block5">
-                                                <span class="step_no">5</span>
-                                                <span class="step_descr"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block6">
-                                                <span class="step_no">6</span>
-                                                <span class="step_descr"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#block7">
-                                                <span class="step_no">7</span>
-                                                <span class="step_descr"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
 
-                                    <div id="block1">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                    <div id="block2">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                    <div id="block3">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="block4">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="block5">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="block6">
-                                        <table class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th>属性</th>
-                                                <th>当前值</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">高度</th>
-                                                <td>6</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">确认数</th>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">大小</th>
-                                                <td>1.01M</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Weight</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">时间</th>
-                                                <td>2018-06-08 14:23:00</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">播报方</th>
-                                                <td>宁夏中宁宁安堡种植基地</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">块哈希</th>
-                                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Merkle Root</th>
-                                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div id="block7">
-                                        <div class="x_content">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                <tr>
-                                                    <th>属性</th>
-                                                    <th>当前值</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <th scope="row">高度</th>
-                                                    <td>6</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">确认数</th>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">大小</th>
-                                                    <td>1.01M</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Weight</th>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">时间</th>
-                                                    <td>2018-06-08 14:23:00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">播报方</th>
-                                                    <td>宁夏中宁宁安堡种植基地</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">块哈希</th>
-                                                    <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Merkle Root</th>
-                                                    <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                <div class="row">
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">创世区块</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
                                         </div>
-
                                     </div>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">区块高度</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
+                                        </div>
+                                    </div>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">区块高度</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
+                                        </div>
+                                    </div>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">区块高度</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
+                                        </div>
+                                    </div>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">区块高度</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
+                                        </div>
+                                    </div>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile-stats changecolor unchosen">
+                                            <div class="count">区块高度</div>
+                                            <h3>节点名称</h3>
+                                            <p>12s前</p>
+                                            <p>1.01M</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div id="wizard" class="form_wizard wizard_horizontal">-->
+                                <!--</div>-->
+                                <!--<ul class="wizard_steps">-->
+                                <!--<li>-->
+                                <!--<a href="#block1">-->
+                                <!--<span id="nodeHeight0" class="step_no">-->
+                                <!--创世区块-->
+                                <!--节点名称-->
+                                <!--12s前-->
+                                <!--1.01M-->
+                                <!--</span>-->
+                                <!--&lt;!&ndash;<div class="step_descr">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span id="nodeName0" class="step_descr">节点名称</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span id="time0" class="step_descr">12s前</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span id="size0" class="step_descr">1.01M</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block2">-->
+                                <!--<span class="step_no">2</span>-->
+                                <!--<span class="step_descr">-->
+                                <!--Step 2<br/>-->
+                                <!--<small>Step 2 description</small>-->
+                                <!--</span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block3">-->
+                                <!--<span class="step_no">3</span>-->
+                                <!--<span class="step_descr">-->
+                                <!--Step 3<br/>-->
+                                <!--<small>Step 3 description</small>-->
+                                <!--</span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block4">-->
+                                <!--<span class="step_no">4</span>-->
+                                <!--<span class="step_descr"></span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block5">-->
+                                <!--<span class="step_no">5</span>-->
+                                <!--<span class="step_descr"></span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block6">-->
+                                <!--<span class="step_no">6</span>-->
+                                <!--<span class="step_descr"></span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                <!--<a href="#block7">-->
+                                <!--<span class="step_no">7</span>-->
+                                <!--<span class="step_descr"></span>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <!--</ul>-->
+
+                                <div id="block1">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>属性</th>
+                                            <th>当前值</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">高度</th>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">确认数</th>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">大小</th>
+                                            <td>1.01M</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Weight</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">时间</th>
+                                            <td>2018-06-08 14:23:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">播报方</th>
+                                            <td>宁夏中宁宁安堡种植基地</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">块哈希</th>
+                                            <td>
+                                                353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Merkle Root</th>
+                                            <td>
+                                                32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
                                 <!-- End SmartWizard Content -->
+
                             </div>
-
-
-
-
+                            <div class="form-group">
+                                <div class="col-md-9 col-md-offset-3">
+                                    <button type="submit" class="btn btn-primary">前一个块</button>
+                                    <button type="submit" class="btn btn-success">后一个块</button>
+                                </div>
+                            </div>
                             <div class="x_content">
-
-
-
-
 
 
                             </div>
@@ -680,5 +474,13 @@
 <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+<script>
+    $(".changecolor").click(function () {
+        $(".changecolor").removeClass('chosen');
+        $(".changecolor").addClass('unchosen');
+        $(this).removeClass('unchosen');
+        $(this).addClass('chosen');
+    });
+</script>
 </body>
 </html>
