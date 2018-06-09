@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>三链科技 | 统计分析</title>
+    <title>三链科技 | 根据查询条件展示</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,9 +17,16 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="css/maps/button-align.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -222,82 +229,120 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>统计分析</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="block_peer.html">
+                        <div class="icon"><i class="fa fa-desktop"></i></div>
+                        <div class="count">3</div>
+                        <h3>节点</h3>
+                        <p>Peer</p>
+                    </a>
                 </div>
-
-                <div class="clearfix"></div>
-
-                <div class="row">
-                    <!-- bar chart -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h3>
-                                    <input type="radio" class="flat" name="gender" id="genderM" value="M" checked=""
-                                           required/>
-                                    按抽样结果分析
-                                    <input type="radio" class="flat" name="gender" id="genderF" value="F"/>
-                                    按加工工艺分析
-                                </h3>
-
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <h2>分析结果</h2>
-                            <div class="x_content">
-                                <div id="graph_bar" style="width:100%; height:280px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /bar charts -->
-
-                <!-- /line graph -->
             </div>
-        </div>
-    </div>
-    <!-- /page content -->
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="block_info.html">
+                        <div class="icon"><i class="fa fa-cube"></i></div>
+                        <div class="count">3</div>
+                        <h3>区块</h3>
+                        <p>Block</p>
+                    </a>
+                </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="blockBrowser.html">
+                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
+                        <div class="count">50</div>
+                        <h3>交易</h3>
+                        <p>Transcation</p>
+                    </a>
+                </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <div class="icon"><i class="fa fa-link"></i></div>
+                    <div class="count">3</div>
+                    <h3>链码</h3>
+                    <p>Chaincode</p>
+                </div>
+            </div>
 
-    <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            中药材区块链溯源 @三链科技版权所有
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>交易详情</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="product-image">
+                                <img height="500px" src="images/prod-1.jpg" alt="..." />
+                            </div>
+                            <div class="product_gallery">
+                                <!--<a>-->
+                                <!--<img src="images/prod-2.jpg" alt="..." />-->
+                                <!--</a>-->
+                                <!--<a>-->
+                                <!--<img src="images/prod-3.jpg" alt="..." />-->
+                                <!--</a>-->
+                                <!--<a>-->
+                                <!--<img src="images/prod-4.jpg" alt="..." />-->
+                                <!--</a>-->
+                                <!--<a>-->
+                                <!--<img src="images/prod-5.jpg" alt="..." />-->
+                                <!--</a>-->
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
+
+                            <h3 class="prod_title" style="word-wrap: break-word;">哈希值：1f0e3dad99908345f7439f8ffabdffc4</h3>
+
+                            <div class="">
+                                <h2>节点</h2>
+                                <h3 id="peer_name"></h3>
+                            </div>
+                            <br />
+
+                            <div class="">
+                                <h2>环节</h2>
+                                <h3 id="link_name"></h3>
+                            </div>
+                            <br />
+
+                            <div class="">
+                                <h2>批次</h2>
+                                <h3 id="batch_name"></h3>
+                            </div>
+                            <br />
+
+                            <div class="">
+                                <h2>详细信息</h2>
+                                <h3 id="detail_name"></h3>
+                            </div>
+                            <br />
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
-</div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                中药材区块链溯源 @三链科技版权所有
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
 </div>
 
 <!-- jQuery -->
@@ -308,9 +353,24 @@
 <script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../vendors/nprogress/nprogress.js"></script>
-<!-- morris.js -->
-<script src="../vendors/raphael/raphael.min.js"></script>
-<script src="../vendors/morris.js/morris.min.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>

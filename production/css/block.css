@@ -1,0 +1,12 @@
+
+.changecolor:hover{
+    background-color: #2e3f52;
+}
+
+.chosen{
+    background-color: #2e3f52;
+}
+
+.unchosen{
+    background-color: #ffffff;
+}
