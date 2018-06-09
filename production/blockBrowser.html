@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>三链科技 | 区块链浏览器</title>
+    <title>三链科技 | 根据查询条件展示</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,11 +15,18 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-
-    <link href="css/block.css" rel="stylesheet">
+    <link href="css/maps/button-align.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -222,232 +229,628 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>区块链浏览器</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="block_peer.html">
+                        <div class="icon"><i class="fa fa-desktop"></i></div>
+                        <div class="count">3</div>
+                        <h3>节点</h3>
+                        <p>Peer</p>
+                    </a>
                 </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="block_info.html">
+                        <div class="icon"><i class="fa fa-cube"></i></div>
+                        <div class="count">3</div>
+                        <h3>区块</h3>
+                        <p>Block</p>
+                    </a>
+                </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <a href="blockBrowser.html">
+                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
+                        <div class="count">50</div>
+                        <h3>交易</h3>
+                        <p>Transcation</p>
+                    </a>
+                </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                    <div class="icon"><i class="fa fa-link"></i></div>
+                    <div class="count">3</div>
+                    <h3>链码</h3>
+                    <p>Chaincode</p>
+                </div>
+            </div>
 
-                <div class="clearfix"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>交易区块列表
+                            <small>BlockList</small>
+                        </h2>
+                        <div class="clearfix"></div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>联盟链状态</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
+                    <div class="x_content">
 
-                            <div class="x_content">
+                        <table id="datatable-keytable" width="100%"
+                               class="table table-striped jambo_table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="column-title">编号<p>ID</p></th>
+                                <th class="column-title">区块<p>block</p></th>
+                                <th class="column-title">交易哈希值<p>Data_hash</p></th>
+                                <th class="column-title">前一交易哈希值<p>Previous_hash</p></th>
+                                <th class="column-title">批次<p>batch</p></th>
+                                <th class="column-title">环节<p>link</p></th>
+                                <th class="column-title">提交者<p>commiter</p></th>
+                                <th>创建时间<p>create_time</p></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>50</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=50">3530e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td><span style="word-wrap: break-word;">33323831e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
+                                </td>
+                                <td>20180523001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-23 08:16:20</td>
+                            </tr>
+                            <tr>
+                                <td>49</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=49">33323831e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31383437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180522001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-23 00:25:52</td>
+                            </tr>
+                            <tr>
+                                <td>48</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=48">31383437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>343831e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180521001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-22 00:40:11</td>
+                            </tr>
+                            <tr>
+                                <td>47</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=47">343831e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>3235e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180520001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-21 00:07:13</td>
+                            </tr>
+                            <tr>
+                                <td>46</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=46">3235e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32303536e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180519001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-20 00:39:53</td>
+                            </tr>
+                            <tr>
+                                <td>45</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=45">32303536e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31303934e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180518001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-18 23:53:24</td>
+                            </tr>
+                            <tr>
+                                <td>44</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=44">31303934e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31333632e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180517001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-18 00:36:22</td>
+                            </tr>
+                            <tr>
+                                <td>43</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=43">31333632e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>333238e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180516001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-17 00:26:07</td>
+                            </tr>
+                            <tr>
+                                <td>42</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=42">333238e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31363131e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180515001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-15 23:48:58</td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=41">31363131e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32383337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180514001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-15 00:43:19</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td>3</td>
+                                <td><a href="detail.html?id=40">32383337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32343935e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180513001</td>
+                                <td>采购仓储</td>
+                                <td>玄武辅仁堂中药材原料库</td>
+                                <td>2018-05-13 23:55:59</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=39">32343935e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33313238e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180512001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-12 23:55:51</td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=38">33313238e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31363437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180511001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-12 00:24:00</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=37">31363437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31303837e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180510001</td>
+                                <td>初加工</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-11 00:06:21</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=36">31303837e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31353930e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180509001</td>
+                                <td>初加工</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-09 23:55:08</td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=35">31353930e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33353431e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180508001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-09 00:11:41</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=34">33353431e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31373837e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180507001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-08 00:32:04</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=33">31373837e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31303239e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180506001</td>
+                                <td>初加工</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-07 00:40:49</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=32">31303239e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>353337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180505001</td>
+                                <td>初加工</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-06 00:35:24</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=31">353337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32363835e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180504001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-05 00:01:59</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=30">32363835e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31323133e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180503001</td>
+                                <td>初加工</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-04 00:23:03</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=29">31323133e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31353934e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180502001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-03 00:00:56</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=28">31353934e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>343333e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180501001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-05-02 00:27:20</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=27">343333e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32383738e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180430001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-05-01 00:36:57</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=26">32383738e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>353539e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180429001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-30 00:07:26</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=25">353539e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31353537e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180428001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-29 00:06:54</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=24">31353537e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31393839e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180427001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-28 00:41:32</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=23">31393839e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32323030e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180426001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-27 00:03:18</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=22">32323030e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32383838e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180425001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-25 23:47:11</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=21">32383838e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31333033e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180424001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-25 00:07:28</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>2</td>
+                                <td><a href="detail.html?id=20">31333033e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32303531e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180423001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-23 23:53:23</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=19">32303531e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33343035e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180422001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-22 23:47:29</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=18">33343035e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33343636e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180421001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-22 00:42:01</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=17">33343636e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31393631e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180420001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-21 00:24:55</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=16">31393631e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>333833e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180419001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-19 23:47:19</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=15">333833e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31393633e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180418001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-19 00:24:29</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=14">31393633e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>363032e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180417001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-17 23:53:31</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=13">363032e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32323437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180416001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-17 00:09:47</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=12">32323437e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32333737e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180415001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-16 00:22:36</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=11">32333737e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31393936e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180414001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-15 00:25:13</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=10">31393936e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31303233e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180413001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-13 23:47:26</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=9">31303233e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31353337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180412001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-13 00:37:06</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=8">31353337e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32343431e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180411001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-12 00:19:12</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=7">32343431e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>31343333e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180410001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-11 00:42:16</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=6">31343333e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33343931e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180409001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-09 23:58:15</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=5">33343931e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>33323738e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180408001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-09 00:07:09</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=4">33323738e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>353436e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180407001</td>
+                                <td>种植采收</td>
+                                <td>山东临沂平邑金银花种植基地</td>
+                                <td>2018-04-07 23:50:00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=3">353436e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180406001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-06 23:46:36</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>1</td>
+                                <td><a href="detail.html?id=2">32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</a>
+                                </td>
+                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td>20180405001</td>
+                                <td>种植采收</td>
+                                <td>陕西杨凌“金花3号”金银花种植基地</td>
+                                <td>2018-04-05 23:48:56</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>金银花创世块</td>
+                                <td>2018-04-04 23:51:31</td>
+                            </tr>
+                            </tbody>
 
-                                <!-- Smart Wizard -->
-
-                                <div class="row">
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">创世区块</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--<div id="wizard" class="form_wizard wizard_horizontal">-->
-                                <!--</div>-->
-                                <!--<ul class="wizard_steps">-->
-                                <!--<li>-->
-                                <!--<a href="#block1">-->
-                                <!--<span id="nodeHeight0" class="step_no">-->
-                                <!--创世区块-->
-                                <!--节点名称-->
-                                <!--12s前-->
-                                <!--1.01M-->
-                                <!--</span>-->
-                                <!--&lt;!&ndash;<div class="step_descr">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<span id="nodeName0" class="step_descr">节点名称</span>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<span id="time0" class="step_descr">12s前</span>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<span id="size0" class="step_descr">1.01M</span>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block2">-->
-                                <!--<span class="step_no">2</span>-->
-                                <!--<span class="step_descr">-->
-                                <!--Step 2<br/>-->
-                                <!--<small>Step 2 description</small>-->
-                                <!--</span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block3">-->
-                                <!--<span class="step_no">3</span>-->
-                                <!--<span class="step_descr">-->
-                                <!--Step 3<br/>-->
-                                <!--<small>Step 3 description</small>-->
-                                <!--</span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block4">-->
-                                <!--<span class="step_no">4</span>-->
-                                <!--<span class="step_descr"></span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block5">-->
-                                <!--<span class="step_no">5</span>-->
-                                <!--<span class="step_descr"></span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block6">-->
-                                <!--<span class="step_no">6</span>-->
-                                <!--<span class="step_descr"></span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                <!--<a href="#block7">-->
-                                <!--<span class="step_no">7</span>-->
-                                <!--<span class="step_descr"></span>-->
-                                <!--</a>-->
-                                <!--</li>-->
-                                <!--</ul>-->
-
-                                <div id="block1">
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>属性</th>
-                                            <th>当前值</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">高度</th>
-                                            <td>6</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">确认数</th>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">大小</th>
-                                            <td>1.01M</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Weight</th>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">时间</th>
-                                            <td>2018-06-08 14:23:00</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">播报方</th>
-                                            <td>宁夏中宁宁安堡种植基地</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">块哈希</th>
-                                            <td>
-                                                353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Merkle Root</th>
-                                            <td>
-                                                32333430e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                                <!-- End SmartWizard Content -->
-
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-9 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">前一个块</button>
-                                    <button type="submit" class="btn btn-success">后一个块</button>
-                                </div>
-                            </div>
-                            <div class="x_content">
-
-
-                            </div>
-                        </div>
+                        </table>
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- /page content -->
 
@@ -470,17 +873,27 @@
 <script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../vendors/nprogress/nprogress.js"></script>
-<!-- jQuery Smart Wizard -->
-<script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
-<script>
-    $(".changecolor").click(function () {
-        $(".changecolor").removeClass('chosen');
-        $(".changecolor").addClass('unchosen');
-        $(this).removeClass('unchosen');
-        $(this).addClass('chosen');
-    });
-</script>
+
 </body>
 </html>
