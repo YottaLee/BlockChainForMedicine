@@ -66,13 +66,13 @@
                             </li>
                             <li><a><i class="fa fa-copy"></i> 数据录入 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="dataEntry_harvest.html">采收管理</a></li>
-                                    <li><a href="dataEntry_process.html">初加工管理</a></li>
-                                    <li><a href="dataEntry_storage.html">仓储管理</a></li>
-                                    <li><a href="dataEntry_examine.html">抽样检验</a></li>
-                                    <li><a href="dataEntry_purchase.html">采购管理</a></li>
-                                    <li><a href="dataEntry_produce.html">加工生产</a></li>
-                                    <li><a href="dataEntry_sale.html">销售管理</a></li>
+                                    <li id="harvest"><a href="dataEntry_harvest.html">采收管理</a></li>
+                                    <li id="process"><a href="dataEntry_process.html">初加工管理</a></li>
+                                    <li id="storage"><a href="dataEntry_storage.html">仓储管理</a></li>
+                                    <li id="examine"><a href="dataEntry_examine.html">抽样检验</a></li>
+                                    <li id="purchase"><a href="dataEntry_purchase.html">采购管理</a></li>
+                                    <li id="produce"><a href="dataEntry_produce.html">加工生产</a></li>
+                                    <li id="sale"><a href="dataEntry_sale.html">销售管理</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-search"></i> 溯源查询 <span class="fa fa-chevron-down"></span></a>
@@ -511,5 +511,7 @@
         $(this).addClass('chosen');
     });
 </script>
+<!-- DataEntry -->
+<script src="../vendors/dataEntry/dataEntry.js" type="text/javascript"></script>
 </body>
 </html>
