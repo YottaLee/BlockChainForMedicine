@@ -4263,7 +4263,7 @@ if (typeof NProgress != 'undefined') {
 					value: 335,
 					name: 'Direct Access'
 				  }, {
-					value: 310,
+					value: 20,
 					name: 'E-mail Marketing'
 				  }, {
 					value: 234,
