@@ -26,30 +26,44 @@ connection.connect(function (err) {
 
 });
 
+
 //执行SQL语句
-connection.query('SELECT * from company', function (err, rows, fields) {
+// connection.query(find, function (err, rows, fields) {
+//
+//     if (err) {
+//
+//         console.log('[query] - :' + err);
+//
+//         return;
+//
+//     }
+//
+//     console.log('The solution is: ', rows.data);
+//
+// });
 
-    if (err) {
+// connection.query(find, function(error, results, fields){
+//     if (error) {
+//         throw error;
+//     }
+//     if (results) {
+//         for(var i = 0; i < results.length; i++)
+//         {
+//             console.log('%s\t%s',results[i].username,results[i].pass_word);
+//         }
+//     }
+// });
 
-        console.log('[query] - :' + err);
-
-        return;
-
-    }
-
-    console.log('The solution is: ', rows[0].solution);
-
-});
 
 //关闭connection
-connection.end(function (err) {
-
-    if (err) {
-
-        return;
-
-    }
-
-    console.log('[connection end] succeed!');
-
-});
+// connection.end(function (err) {
+//
+//     if (err) {
+//
+//         return;
+//
+//     }
+//
+//     console.log('[connection end] succeed!');
+//
+// });
