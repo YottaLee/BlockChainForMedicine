@@ -300,7 +300,7 @@
                                 <!-- Smart Wizard -->
 
                                 <div class="row">
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block0" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">创世区块</div>
                                             <h3>节点名称</h3>
@@ -308,7 +308,7 @@
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block1" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">区块高度</div>
                                             <h3>节点名称</h3>
@@ -316,7 +316,7 @@
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block2"  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">区块高度</div>
                                             <h3>节点名称</h3>
@@ -324,7 +324,7 @@
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block3" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">区块高度</div>
                                             <h3>节点名称</h3>
@@ -332,7 +332,7 @@
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block4" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">区块高度</div>
                                             <h3>节点名称</h3>
@@ -340,7 +340,7 @@
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div id="block5" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                         <div class="tile-stats changecolor unchosen">
                                             <div class="count">区块高度</div>
                                             <h3>节点名称</h3>
@@ -349,7 +349,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="block1">
+                                <div id="blockinfo">
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
@@ -389,8 +389,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-9 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">前一个块</button>
-                                    <button type="submit" class="btn btn-success">后一个块</button>
+                                    <button type="submit" class="btn btn-primary" onclick="previousblock()">前一个块</button>
+                                    <button type="submit" class="btn btn-success" onclick="nextblock()">后一个块</button>
                                 </div>
                             </div>
                             <div class="x_content">
@@ -427,14 +427,7 @@
 <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
-<script>
-    $(".changecolor").click(function () {
-        $(".changecolor").removeClass('chosen');
-        $(".changecolor").addClass('unchosen');
-        $(this).removeClass('unchosen');
-        $(this).addClass('chosen');
-    });
-</script>
+<script src="js/block_info/block_info.js"></script>
 <!-- DataEntry -->
 <script src="../vendors/dataEntry/dataEntry.js" type="text/javascript"></script>
 </body>
