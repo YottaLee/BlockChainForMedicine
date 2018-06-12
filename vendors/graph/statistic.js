@@ -1,30 +1,30 @@
+if ($('#mybarChart').length ){
 
-console.log('init_morris_charts');
+  var ctx = document.getElementById("mybarChart");
+  var mybarChart = new Chart(ctx, {
+	type: 'bar',
+	data: {
+	  labels: ["January", "February", "March", "April", "May", "June", "July"],
+	  datasets: [{
+		label: '# of Votes',
+		backgroundColor: "#26B99A",
+		data: [51, 30, 40, 28, 92, 50, 45]
+	  }, {
+		label: '# of Votes',
+		backgroundColor: "#03586A",
+		data: [41, 56, 25, 48, 72, 34, 12]
+	  }]
+	},
 
-if ($('#graph_bar').length){
-
-    Morris.Bar({
-        element: 'graph_bar',
-        data: [
-            {device: 'iPhone 4', geekbench: 380},
-            {device: 'iPhone 4S', geekbench: 655},
-            {device: 'iPhone 3GS', geekbench: 275},
-            {device: 'iPhone 5', geekbench: 1571},
-            {device: 'iPhone 5S', geekbench: 655},
-            {device: 'iPhone 6', geekbench: 2154},
-            {device: 'iPhone 6 Plus', geekbench: 1144},
-            {device: 'iPhone 6S', geekbench: 2371},
-            {device: 'iPhone 6S Plus', geekbench: 1471},
-            {device: 'Other', geekbench: 1371}
-        ],
-        xkey: 'device',
-        ykeys: ['geekbench'],
-        labels: ['Geekbench'],
-        barRatio: 0.4,
-        barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-        xLabelAngle: 35,
-        hideHover: 'auto',
-        resize: true
-    });
+	options: {
+	  scales: {
+		yAxes: [{
+		  ticks: {
+			beginAtZero: true
+		  }
+		}]
+	  }
+	}
+  });
 
 }
