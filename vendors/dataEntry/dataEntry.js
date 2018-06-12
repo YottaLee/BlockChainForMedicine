@@ -3,7 +3,7 @@
 var nodeType ="produce";
 
 
-if(nodeType==="grow"){
+if(nodeType=="grow"){
     document.getElementById('storage').remove();
     document.getElementById('examine').remove();
     document.getElementById('purchase').remove();
