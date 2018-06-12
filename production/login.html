@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>三链科技 | 登陆</title>
+    <title>一链科技 | 登陆</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -39,16 +39,16 @@
 					</span>
             </div>
             <div class="login_wrapper">
-                <form class="animate login100-form validate-form">
+                <!--<form class="animate login100-form validate-form">-->
                     <div class="wrap-input100 validate-input m-b-26" data-validate="用户名不能为空">
                         <span class="label-input100">用户名</span>
-                        <input class="input100" type="text" name="username" placeholder="请输入用户名">
+                        <input id="username" class="input100" type="text" name="username" placeholder="请输入用户名">
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-18" data-validate="密码不能为空">
                         <span class="label-input100">密码</span>
-                        <input class="input100" type="password" name="pass" placeholder="请输入密码">
+                        <input id="password" class="input100" type="password" name="pass" placeholder="请输入密码">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -67,7 +67,7 @@
                     </div>
                     <div class="validate-input m-b-18">
                         <div class="container-login100-form-btn">
-                            <button class="login100-form-btn">
+                            <button id="login" onclick="login()" class="login100-form-btn">
                                 登陆
                             </button>
                         </div>
@@ -76,7 +76,7 @@
                         <img src="images/注册/logo.png" />
                         <p>中药材区块链溯源 @一链科技版权所有</p>
                     </div>
-                </form>
+                <!--</form>-->
             </div>
         </div>
     </div>
@@ -98,6 +98,13 @@
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
-
+<!-- login.js -->
+<!--<script src="js/login/login.js" type="text/javascript"></script>-->
+<script>
+    function login(){
+        var username =$('#username').val();
+        console.log(username);
+    }
+</script>
 </body>
 </html>
