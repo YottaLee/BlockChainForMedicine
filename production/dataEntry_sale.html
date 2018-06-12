@@ -214,7 +214,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>药材生产数据录入</h3>
+                        <h3>药材销售数据录入</h3>
                     </div>
 
                     <div class="title_right">
@@ -269,7 +269,93 @@
                                 </div>
                             </div>
                             <div class="x_content">
+                                <div class="form-horizontal form-label-left form-group">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购批次
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="purchaseID" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采收批次
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select id="harvestOrder" class="form-control col-md-7 col-xs-12">
+                                                <option>CS2018030500001</option>
+                                                <option>CS2018030500002</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购时间
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="purchaseTime" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购数量
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="purchaseNumber" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购单位
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <select id="purchaseUnit" class="form-control col-md-7 col-xs-12">
+                                                <option>公斤</option>
+                                                <option>吨</option>
+                                                <option>斤</option>
+                                                <option>根</option>
+                                                <option>打</option>
+                                                <option>个</option>
+                                                <option>只</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">合同编号
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="contactID" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">存放地点
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="storagePlace" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购负责人
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="purchaseMan" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">上传附件</label>
+                                        <div class="col-md-2">
+                                            <label for="file">
+                                                <input id="file" class="" type="file" name="file"/>
 
+                                                <div class="form-control fileinputsmall" id="rightText">
+                                                    <div type="button">上传附件</div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <button id="upload" class="btn btn-info" type="button" onclick="fileUpload()">上传附件</button>
+                                            <button id="summit" type="submit" class="btn btn-success">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

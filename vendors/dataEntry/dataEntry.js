@@ -1,6 +1,6 @@
 
 
-var nodeType ="produce";
+var nodeType ="sale";
 
 
 if(nodeType=="grow"){
