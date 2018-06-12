@@ -1,13 +1,12 @@
 
 function summit(){
-    var companyType = $('#produceID').val();
-    var companyName = $('#produceID').val();
-    var creditID = $('#produceID').val();
-    var contactAddress = $('#produceID').val();
-    var phone = $('#produceID').val();
-    var contacter =$('#produceID').val();
+    var companyType = $('#companyType').val();
+    var companyName = $('#companyName').val();
+    var creditID = $('#creditID').val();
+    var contactAddress = $('#contactAddress').val();
+    var phone = $('#phone').val();
+    var contacter =$('#contacter').val();
     var file;
-    console.log(companyName);
 }
 
 var find = "SELECT * from company where username = 'user'";
