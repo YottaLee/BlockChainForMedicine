@@ -1,16 +1,13 @@
 
-var companyName = "";
-var creditID = "";
-var contactAddress = "";
-var phone = "";
-var contacter ="" ;
-var file;
-var companyType = "111";
-// console.log(companyType);
-
 function summit(){
-    var test = $('#harvestTime').val();
-    console.log(test);
+    var companyType = $('#produceID').val();
+    var companyName = $('#produceID').val();
+    var creditID = $('#produceID').val();
+    var contactAddress = $('#produceID').val();
+    var phone = $('#produceID').val();
+    var contacter =$('#produceID').val();
+    var file;
+    console.log(companyName);
 }
 
 
