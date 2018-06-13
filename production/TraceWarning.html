@@ -47,7 +47,7 @@
                     <img src="images/注册/logo.png" width="200px" height="auto"/>
                     <!--<div class="profile_info">-->
                     <!--<h2>中药材溯源系统</h2>-->
-                    <!--&lt;!&ndash;<h2>John Doe</h2>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<h2>陈无忌</h2>&ndash;&gt;-->
                     <!--</div>-->
 
                     <div class="clearfix"></div>
@@ -131,7 +131,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt="">陈无忌
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -262,116 +262,127 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <table id="datatable" class="table table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                      <th colspan="2"></th>
-                                        <th colspan="2" bgcolor="#82FA58"><font color="#FE2E2E">种植</font></th>
-                                        <th colspan="2" bgcolor="#FFFFDF"><font color="#080808">采收</font></th>
-                                        <th colspan="2" bgcolor="#1ad4e0"><font color="#080808">抽样检验</font></th>
-                                        <th colspan="5" bgcolor="#E6CAFF"><font color="#080808">加工炮制</font></th>
-                                        <th colspan="4" bgcolor="#FE2E2E"><font color="#080808">销售管理</font></th>
-                                    </tr>
-                                    <tr>
-                                        <th>产品编码</th>
-                                        <th>产品名称</th>
-                                        <th>种植基地</th>
-                                        <th>农药残留</th>
-                                        <th>采收批次</th>
-                                        <th>采收天气</th>
-                                        <th>抽样结果</th>
-                                        <th>检验报告</th>
-                                        <th>加工时间</th>
-                                        <th>加工数量/单位</th>
-                                        <th>加工工艺</th>
-                                        <th>加工地点</th>
-                                        <th>车间负责人</th>
-                                        <th>销售时间</th>
-                                        <th>销售数量/单位</th>
-                                        <th>销售地点</th>
-                                        <th>销售负责人</th>
-                                    </tr>
-                                    </thead>
+                                <div id="findingList">
+                                    <script>
+                                        var script = document.createElement("script");
+                                        script.type = "text/javascript";
+                                        script.src = "js/trackwarning/trackwarning.js";
+                                        document.body.appendChild(script);
+                                    </script>
+                                </div>
 
-                                    <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+
+
+                                <!--<table id="datatable" class="table table-striped table-bordered">-->
+                                    <!--<thead>-->
+                                    <!--<tr>-->
+                                      <!--<th colspan="2"></th>-->
+                                        <!--<th colspan="2" bgcolor="#82FA58"><font color="#FE2E2E">种植</font></th>-->
+                                        <!--<th colspan="2" bgcolor="#FFFFDF"><font color="#080808">采收</font></th>-->
+                                        <!--<th colspan="2" bgcolor="#1ad4e0"><font color="#080808">抽样检验</font></th>-->
+                                        <!--<th colspan="5" bgcolor="#E6CAFF"><font color="#080808">加工炮制</font></th>-->
+                                        <!--<th colspan="4" bgcolor="#FE2E2E"><font color="#080808">销售管理</font></th>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<th>产品编码</th>-->
+                                        <!--<th>产品名称</th>-->
+                                        <!--<th>种植基地</th>-->
+                                        <!--<th>农药残留</th>-->
+                                        <!--<th>采收批次</th>-->
+                                        <!--<th>采收天气</th>-->
+                                        <!--<th>抽样结果</th>-->
+                                        <!--<th>检验报告</th>-->
+                                        <!--<th>加工时间</th>-->
+                                        <!--<th>加工数量/单位</th>-->
+                                        <!--<th>加工工艺</th>-->
+                                        <!--<th>加工地点</th>-->
+                                        <!--<th>车间负责人</th>-->
+                                        <!--<th>销售时间</th>-->
+                                        <!--<th>销售数量/单位</th>-->
+                                        <!--<th>销售地点</th>-->
+                                        <!--<th>销售负责人</th>-->
+                                    <!--</tr>-->
+                                    <!--</thead>-->
+
+                                    <!--<tbody>-->
+                                    <!--<tr>-->
+                                        <!--<td>6921581596048</td>-->
+                                        <!--<td>宁夏中宁黑枸杞</td>-->
+                                        <!--<td>宁夏中宁宁安堡种植基地</td>-->
+                                        <!--<td>无</td>-->
+                                        <!--<td>CS20180305001</td>-->
+                                        <!--<td>晴</td>-->
+                                        <!--<td>合格</td>-->
+                                        <!--<td>FRTJY80315</td>-->
+                                        <!--<td>20180325</td>-->
+                                        <!--<td>100/KG</td>-->
+                                        <!--<td>低温烘干-等级分选-静电除杂</td>-->
+                                        <!--<td>玄武辅仁堂中药材炮制车间</td>-->
+                                        <!--<td>陈无忌</td>-->
+                                        <!--<td>20180326</td>-->
+                                        <!--<td>100/KG</td>-->
+                                        <!--<td>玄武辅仁堂药店</td>-->
+                                        <!--<td>陈忠实</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                        <!--<td></td>-->
+                                    <!--</tr>-->
+                                    <!--</tbody>-->
+                                <!--</table>-->
                                 <button type="button" class="btn btn-success button-align">返回</button>
 
                                 <button type="button" class="btn btn-info button-align">导出</button>
@@ -425,6 +436,8 @@
 <script src="../vendors/dataEntry/dataEntry.js" type="text/javascript"></script>
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+<script src="js/trackwarning/trackwarning.js"></script>
+
 
 </body>
 </html>
