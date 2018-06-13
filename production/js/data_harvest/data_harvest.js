@@ -1,4 +1,4 @@
-
+var myDate = new Date();
 
 function summit() {
     var harvestID = $('#harvestID').val();
@@ -21,7 +21,7 @@ function summit() {
             "$class": "org.onechain.medicine.AddCollectAsset",
             "collectAsset": {
                 "$class": "org.onechain.medicine.CollectAsset",
-                index: 1,                           // 自增量
+                index: parseInt(myDate.getTime()),                           // 自增量
                 collectId: harvestID,                        // 采收批次
                 cTime: harvestTime,                             // 采收时间
                 cLocal: harvestPlace,                             // 采收地点
