@@ -3,17 +3,24 @@ var blockArr = [];
 var index = -1;
 
 $(".changecolor").click(function () {
+    var id = $(this).val();
+    console.log(id);
+    index = parseInt(id[id.length-1]);
+    change_color(this);
+});
+
+function change_color(current){
     $(".changecolor").removeClass('chosen');
     $(".changecolor").addClass('unchosen');
-    $(this).removeClass('unchosen');
-    $(this).addClass('chosen');
-});
+    $(current).removeClass('unchosen');
+    $(current).addClass('chosen');
+}
 
 function previousblock() {
     index--;
     if (index < blockArr.length) {
         var blockstr = "#block"+index.toString();
-        $(blockstr).trigger('click');
+        change_color(blockstr);
         displayData(blockArr[index]);
     }
     else
@@ -24,7 +31,7 @@ function nextblock() {
     index++;
     if (index >= 0) {
         var blockstr = "#block"+index.toString();
-        $(blockstr).trigger('click');
+        change_color(blockstr);
         displayData(blockArr[index]);
     }
     else
