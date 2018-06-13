@@ -17,30 +17,23 @@ function summit() {
         dataType: "json", //指定服务器返回的数据类型
         data: {
 
-            // {
-            //     "$class": "org.onechain.medicine.AddProductionAsset",
-            //     "productionAsset": {
-            //     "$class": "org.onechain.medicine.ProductionAsset",
-            //         "index": 0,
-            //         "productCode": "string",
-            //         "productName": "string",
-            //         "purchaseId": "string",
-            //         "productionId": "string",
-            //         "time": "string",
-            //         "num": 0,
-            //         "productCompany": "string",
-            //         "process": "string",
-            //         "local": "string",
-            //         "leader": "string",
-            //         "operateTime": "2018-06-13T12:38:37.298Z",
-            //         "transId": "string",
-            //         "operater": "string"
-            // },
-            //     "hashIndex": 0,
-            //     "transactionId": "string",
-            //     "timestamp": "2018-06-13T12:38:37.298Z"
-            // }
-
+    // {
+    //     "$class": "org.onechain.medicine.ProductionAsset",
+    //     "index": 0,
+    //     "productCode": "string",
+    //     "productName": "string",
+    //     "purchaseId": "string",
+    //     "productionId": "string",
+    //     "time": "string",
+    //     "num": 0,
+    //     "productCompany": "string",
+    //     "process": "string",
+    //     "local": "string",
+    //     "leader": "string",
+    //     "operateTime": "2018-06-13T12:38:37.421Z",
+    //     "transId": "string",
+    //     "operater": "string"
+    // }
             "$class": "org.onechain.medicine.AddProductionAsset",
             "productionAsset": {
                 "$class": "org.onechain.medicine.ProductionAsset",
