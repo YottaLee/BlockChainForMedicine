@@ -1,4 +1,4 @@
-
+var myDate = new Date();
 
 
 function summit() {
@@ -12,7 +12,7 @@ function summit() {
     var examineMan = $('#examineMan').val();
     var file ;
     $.ajax({
-        url: "http://localhost/api/org.onechain.medicine.AddTestAsset",
+        url: "http://192.168.1.109:3000/api/org.onechain.medicine.AddTestAsset",
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
@@ -22,7 +22,7 @@ function summit() {
                 index: parseInt(myDate.getTime()),                           // 自增量
                 testId: examineID,                        // 采收批次
                 collectId: harvestOrder,                             // 采收时间
-                Time: examineTime,                             // 采收地点
+                time: examineTime,                             // 采收地点
                 company: examineCompany,                      // 采收温度
                 result: examineResult,                          // 采收天气
                 totalAsh: grayNumber,                              // 采收数量
@@ -37,7 +37,7 @@ function summit() {
             alert("已提交");
         },
         error: function () {
-
+            alert("Fail");
         }
     });
 

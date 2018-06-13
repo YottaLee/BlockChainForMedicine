@@ -14,10 +14,33 @@ function summit() {
 
 
     $.ajax({
-        url: "http://localhost/api/org.onechain.medicine.AddPurchaseAsset",
+        url: "http://192.168.1.109:3000/api/org.onechain.medicine.AddPurchaseAsset",
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
+
+    // {
+    //     "$class": "org.onechain.medicine.AddPurchaseAsset",
+    //     "purchaseAsset": {
+    //     "$class": "org.onechain.medicine.PurchaseAsset",
+    //         "index": 0,
+    //         "purchaseId": "string",
+    //         "collectId": "string",
+    //         "time": "string",
+    //         "num": 0,
+    //         "company": "string",
+    //         "contractNO": "string",
+    //         "storage": "string",
+    //         "leader": "string",
+    //         "operateTime": "2018-06-13T12:38:37.314Z",
+    //         "transId": "string",
+    //         "operater": "string"
+    // },
+    //     "hashIndex": 0,
+    //     "transactionId": "string",
+    //     "timestamp": "2018-06-13T12:38:37.314Z"
+    // }
+
             "$class": "org.onechain.medicine.AddPurchaseAsset",
             "purchaseAsset": {
                 "$class": "org.onechain.medicine.PurchaseAsset",
@@ -27,7 +50,7 @@ function summit() {
                 time: purchaseTime,
                 num: purchaseNumber,
                 company: purchaseUnit,
-                contactNO: contactID,
+                contractNO: contactID,
                 storage: storagePlace,
                 leader: purchaseMan,
                 transId: "1",
@@ -39,7 +62,7 @@ function summit() {
             alert("已提交");
         },
         error: function () {
-
+            alert("Fail");
         }
     });
 

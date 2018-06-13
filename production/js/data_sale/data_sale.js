@@ -1,3 +1,5 @@
+var myDate = new Date();
+
 function summit() {
     var purchaseID = $('#purchaseID').val();
     var harvestOrder = $('#harvestOrder').val();
@@ -10,7 +12,7 @@ function summit() {
     var file ;
 
     $.ajax({
-        url: "http://localhost/api/org.onechain.medicine.AddCollectAsset",
+        url: "http://192.168.1.109:3000/api/org.onechain.medicine.AddCollectAsset",
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
@@ -36,7 +38,7 @@ function summit() {
             alert("已提交");
         },
         error: function () {
-
+            alert("Fail");
         }
     });
 

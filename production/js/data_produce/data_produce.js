@@ -12,10 +12,35 @@ function summit() {
     var file;
     console.log(parseInt(myDate.getTime()));
     $.ajax({
-        url: "http://localhost/api/org.onechain.medicine.AddProduceAsset",
+        url: "http://192.168.1.109:3000/api/org.onechain.medicine.AddProductionAsset",
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
+
+            // {
+            //     "$class": "org.onechain.medicine.AddProductionAsset",
+            //     "productionAsset": {
+            //     "$class": "org.onechain.medicine.ProductionAsset",
+            //         "index": 0,
+            //         "productCode": "string",
+            //         "productName": "string",
+            //         "purchaseId": "string",
+            //         "productionId": "string",
+            //         "time": "string",
+            //         "num": 0,
+            //         "productCompany": "string",
+            //         "process": "string",
+            //         "local": "string",
+            //         "leader": "string",
+            //         "operateTime": "2018-06-13T12:38:37.298Z",
+            //         "transId": "string",
+            //         "operater": "string"
+            // },
+            //     "hashIndex": 0,
+            //     "transactionId": "string",
+            //     "timestamp": "2018-06-13T12:38:37.298Z"
+            // }
+
             "$class": "org.onechain.medicine.AddProductionAsset",
             "productionAsset": {
                 "$class": "org.onechain.medicine.ProductionAsset",
@@ -29,7 +54,10 @@ function summit() {
                 productCompany: producePlace,                 // 加工单位
                 process: produceSkill,                        // 加工工艺
                 local: producePlace,                          //加工地点
-                leader: produceMan                       //车间负责人
+                leader: produceMan,                       //车间负责人
+                operateTime: "2018-06-13T12:38:37.298Z",
+                transId: "1",
+                operater: "user"
             },
             hashIndex: 1,
         },
@@ -37,7 +65,7 @@ function summit() {
             alert("已提交");
         },
         error: function () {
-
+            alert("Fail");
         }
     });
 
