@@ -1,6 +1,7 @@
 ListView();
 
 function ListView() {
+
     var str = "<table id=\"datatable-fixed-header\" class=\"table table-striped table-bordered\">\n" +
         "                                    <thead>\n" +
         "                                    <tr>\n" +
@@ -26,12 +27,12 @@ function ListView() {
         "\n" +
         "                                    <tbody>";
     $.ajax({
-        url: "http://localhost:9090/student",
+        url: "http://localhost/api/org.onechain.medicine.CollectAsset",
         type: "GET",
         dataType: "json", //指定服务器返回的数据类型
         success: function (data) {
+            console.log(data);
             var result = data;
-
             for(var i=0;i<result.length;i++){
                 str += "<tr>"
                 str += "<td>"+result[i].collectId+"</td>";
@@ -52,8 +53,8 @@ function ListView() {
                 str += "<td>"+result[i].temperature+"</td>";
                 str += "</tr>";
             }
-           str += "</tbody>\n" +
-               "                                </table>";
+            str += "</tbody>\n" +
+                "                                </table>";
             document.getElementById("findingList").innerHTML = str;
         }
     });
