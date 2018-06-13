@@ -12,13 +12,13 @@ function summit() {
     var file;
     console.log(parseInt(myDate.getTime()));
     $.ajax({
-        url: "http://localhost/api/org.onechain.medicine.AddCollectAsset",
+        url: "http://localhost/api/org.onechain.medicine.AddProduceAsset",
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
-            "$class": "org.onechain.medicine.AddCollectAsset",
-            "collectAsset": {
-                "$class": "org.onechain.medicine.CollectAsset",
+            "$class": "org.onechain.medicine.AddProduceAsset",
+            "ProduceAsset": {
+                "$class": "org.onechain.medicine.ProduceAsset",
                 index: parseInt(myDate.getTime()),                           // 自增量
                 productCode: produceID,                     //产品编码
                 productName: produceUnit,                     //产品名称

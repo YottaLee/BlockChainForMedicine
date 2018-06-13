@@ -19,8 +19,8 @@ function summit() {
         dataType: "json", //指定服务器返回的数据类型
         data: {
             "$class": "org.onechain.medicine.AddPurchaseAsset",
-            "collectAsset": {
-                "$class": "org.onechain.medicine.purchaseAsset",
+            "PurchaseAsset": {
+                "$class": "org.onechain.medicine.PurchaseAsset",
                 index: parseInt(myDate.getTime()),
                 purchaseId: purchaseID,
                 collectId: harvestOrder,
