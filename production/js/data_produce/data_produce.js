@@ -16,9 +16,9 @@ function summit() {
         type: "POST",
         dataType: "json", //指定服务器返回的数据类型
         data: {
-            "$class": "org.onechain.medicine.AddProduceAsset",
-            "ProduceAsset": {
-                "$class": "org.onechain.medicine.ProduceAsset",
+            "$class": "org.onechain.medicine.AddProductionAsset",
+            "productionAsset": {
+                "$class": "org.onechain.medicine.ProductionAsset",
                 index: parseInt(myDate.getTime()),                           // 自增量
                 productCode: produceID,                     //产品编码
                 productName: produceUnit,                     //产品名称
