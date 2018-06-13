@@ -227,7 +227,7 @@
                 <div class="tile-stats">
                     <a href="block_info.html">
                         <div class="icon"><i class="fa fa-cube"></i></div>
-                        <div class="count">3</div>
+                        <div class="count">6</div>
                         <h3>区块</h3>
                         <p>Block</p>
                     </a>
@@ -300,52 +300,52 @@
                                 <!-- Smart Wizard -->
 
                                 <div class="row">
-                                    <div id="block0" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block0" class="tile-stats changecolor unchosen" onclick="change_color(this)">
                                             <div class="count">创世区块</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
+                                            <h3>宁夏中宁宁安堡种植基地</h3>
+                                            <p>3天前</p>
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div id="block1" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
+                                    <div class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block1" class="tile-stats changecolor unchosen" onclick="change_color(this)">
+                                            <div class="count">1</div>
+                                            <h3>宁夏中宁宁安堡种植基地</h3>
+                                            <p>2天前</p>
+                                            <p>2.01M</p>
+                                        </div>
+                                    </div>
+                                    <div  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block2" class="tile-stats changecolor unchosen" onclick="change_color(this)">
+                                            <div class="count">2</div>
+                                            <h3>河南辅仁堂制药有限公司</h3>
+                                            <p>5h前</p>
                                             <p>1.01M</p>
                                         </div>
                                     </div>
-                                    <div id="block2"  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
+                                    <div  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block3"class="tile-stats changecolor unchosen" onclick="change_color(this)">
+                                            <div class="count">3</div>
+                                            <h3>河南辅仁堂制药有限公司</h3>
+                                            <p>2h前</p>
+                                            <p>3.01M</p>
                                         </div>
                                     </div>
-                                    <div id="block3" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
+                                    <div  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block4" class="tile-stats changecolor unchosen" onclick="change_color(this)">
+                                            <div class="count">4</div>
+                                            <h3>青海诺木洪种植基地</h3>
+                                            <p>1h前</p>
+                                            <p>2.23M</p>
                                         </div>
                                     </div>
-                                    <div id="block4" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
-                                        </div>
-                                    </div>
-                                    <div id="block5" class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile-stats changecolor unchosen">
-                                            <div class="count">区块高度</div>
-                                            <h3>节点名称</h3>
-                                            <p>12s前</p>
-                                            <p>1.01M</p>
+                                    <div  class="animated flipInY col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                        <div id="block5" class="tile-stats changecolor unchosen" onclick="change_color(this)">
+                                            <div class="count">5</div>
+                                            <h3>青海诺木洪种植基地</h3>
+                                            <p>1h前</p>
+                                            <p>1.25M</p>
                                         </div>
                                     </div>
                                 </div>
@@ -354,29 +354,29 @@
                                         <thead>
                                         <tr>
                                             <th>属性</th>
-                                            <th>当前值</th>
+                                            <th id="currentValue">当前值</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <th scope="row">高度</th>
-                                            <td>6</td>
+                                            <td id="height">6</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">大小</th>
-                                            <td>1.01M</td>
+                                            <td id="size">1.01M</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">时间</th>
-                                            <td>2018-06-08 14:23:00</td>
+                                            <td id="time">2018-06-08 14:23:00</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">播报方</th>
-                                            <td>宁夏中宁宁安堡种植基地</td>
+                                            <td id="place">宁夏中宁宁安堡种植基地</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">块哈希</th>
-                                            <td>
+                                            <td id="hash">
                                                 353532e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
                                             </td>
                                         </tr>

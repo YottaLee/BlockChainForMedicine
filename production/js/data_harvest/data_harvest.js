@@ -1,5 +1,5 @@
 var myDate = new Date();
-
+$("#block0").click();
 function summit() {
 
     if(window.confirm("数据是否上链？")) {
