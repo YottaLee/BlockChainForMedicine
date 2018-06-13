@@ -17,7 +17,7 @@ function summit() {
 
 
         $.ajax({
-            url: "http://localhost/api/org.onechain.medicine.AddCollectAsset",
+            url: "http://192.168.1.109:3000/api/org.onechain.medicine.AddCollectAsset",
             type: "POST",
             dataType: "json", //指定服务器返回的数据类型
             data: {
