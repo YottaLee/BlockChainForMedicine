@@ -12,30 +12,32 @@ function summit() {
     var examineMan = $('#examineMan').val();
     var file ;
     $.ajax({
-        url: "/data/examine",
+        url: "http://localhost/api/org.onechain.medicine.AddTestAsset",
         type: "POST",
-        dataType: "json",
+        dataType: "json", //指定服务器返回的数据类型
         data: {
-            examineID: examineID,
-            examineTime:examineTime,
-            examineResult:examineResult,
-            SO2Remain:SO2Remain,
-            harvestOrder:harvestOrder,
-            examineCompany:examineCompany,
-            grayNumber:grayNumber,
-            examineMan:examineMan
-            //file not ready
+            "$class": "org.onechain.medicine.AddTestAsset",
+            "collectAsset": {
+                "$class": "org.onechain.medicine.testAsset",
+                index: parseInt(myDate.getTime()),                           // 自增量
+                testId: examineID,                        // 采收批次
+                collectId: harvestOrder,                             // 采收时间
+                Time: examineTime,                             // 采收地点
+                company: examineCompany,                      // 采收温度
+                result: examineResult,                          // 采收天气
+                totalAsh: grayNumber,                              // 采收数量
+                sulfurDioxide: SO2Remain,                          // 采收单位
+                leader: examineMan,
+                transId: "1",
+                operater: "admin"
+            },
+            hashIndex: 1,
         },
         success: function (data) {
-            if (data.success) {
-                //加积分
-            }
-            else {
-                console.log("Error summit examine!");
-            }
+            alert("已提交");
         },
         error: function () {
-            console.log("Network warning for summiting examine!");
+
         }
     });
 
