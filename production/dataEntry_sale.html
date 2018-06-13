@@ -65,7 +65,7 @@
                             </li>
                             <li><a><i class="fa fa-copy"></i> 数据录入 <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li id="harvest"><a href="dataEntry_harvest.html">采收管理</a></li>
+                                    <li id="harvest"><a href="dataEntry_harvest.html">种植采收</a></li>
                                     <li id="process"><a href="dataEntry_process.html">初加工管理</a></li>
                                     <li id="storage"><a href="dataEntry_storage.html">仓储管理</a></li>
                                     <li id="examine"><a href="dataEntry_examine.html">抽样检验</a></li>
@@ -272,38 +272,42 @@
                             <div class="x_content">
                                 <div class="form-horizontal form-label-left form-group">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购批次
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">产品编码
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="purchaseID" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                            <input id="productID" class="form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采收批次
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">产品名称
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <select id="harvestOrder" class="form-control col-md-7 col-xs-12">
-                                                <option>CS2018030500001</option>
-                                                <option>CS2018030500002</option>
-                                            </select>
+                                            <input id="productName" class="form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购时间
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">生产批次
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="purchaseTime" class="form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购数量
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">销售时间
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="produceTime" class="form-control col-md-7 col-xs-12" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">销售数量
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="purchaseNumber" class="form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购单位
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">单位
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <select id="purchaseUnit" class="form-control col-md-7 col-xs-12">
@@ -318,21 +322,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">合同编号
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="contactID" class="form-control col-md-7 col-xs-12" required="required" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">存放地点
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">销售地点
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="storagePlace" class="form-control col-md-7 col-xs-12" required="required" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">采购负责人
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">车间负责人
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input id="purchaseMan" class="form-control col-md-7 col-xs-12" required="required" type="text">
