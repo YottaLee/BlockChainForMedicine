@@ -15,16 +15,16 @@ function summit() {
         dataType: "json", //指定服务器返回的数据类型
         data: {
             "$class": "org.onechain.medicine.AddProcessAsset",
-            "ProcessAsset": {
+            "processAsset": {
                 "$class": "org.onechain.medicine.ProcessAsset",
-                index: parseInt(myDate.getTime()),                           // 自增量
-                processId: processID,                        // 采收批次
-                collectId: harvestOrder,                             // 采收时间
-                pTime: processTime,                             // 采收地点
-                weather: weather,                      // 采收温度
-                process: processSkill,                          // 采收天气
-                num: parseInt(processNumber),                              // 采收数量
-                company: processUnit,                          // 采收单位
+                index: parseInt(myDate.getTime()),
+                processId: processID,
+                collectId: harvestOrder,
+                pTime: processTime,
+                weather: weather,
+                process: processSkill,
+                num: parseInt(processNumber),
+                company: processUnit,
                 leader: processMan,
                 transId: "1",
                 operater: "admin"

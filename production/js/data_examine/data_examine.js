@@ -17,8 +17,8 @@ function summit() {
         dataType: "json", //指定服务器返回的数据类型
         data: {
             "$class": "org.onechain.medicine.AddTestAsset",
-            "collectAsset": {
-                "$class": "org.onechain.medicine.testAsset",
+            "testAsset": {
+                "$class": "org.onechain.medicine.TestAsset",
                 index: parseInt(myDate.getTime()),                           // 自增量
                 testId: examineID,                        // 采收批次
                 collectId: harvestOrder,                             // 采收时间
